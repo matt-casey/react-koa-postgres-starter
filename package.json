@@ -3,21 +3,15 @@
   "version": "1.0.0",
   "description": "Starter project for React/Redux with custom SCSS",
   "main": "app/index.js",
-  "watch": {
-    "copy-assets": "app/index.html"
-  },
   "scripts": {
-    "watch": "npm-watch",
-    "clean": "rimraf build",
     "copy-assets": "mkdir -p build && cp app/index.html build/index.html && cp -R app/favicon.ico build/favicon.ico && cp -R app/assets build/assets",
-    "build:api": "rimraf server/compiled.js && babel server --out-dir compiled",
-    "build:web": "webpack --config webpack.prod.config.js --progress --profile --colors",
+    "build:api": "rimraf compiled && babel server --out-dir compiled",
+    "build:web": "rimraf build && npm run copy-assets && webpack --config webpack.prod.config.js --progress --profile --colors",
     "build": "npm run build:api && npm run build:web",
-    "postinstall": "npm run clean && npm run copy-assets && npm run build && npm run test",
     "test": "mocha ./test/ --recursive --compilers js:babel-register --reporter dot",
+    "coverage": "istanbul cover _mocha -- --recursive --compilers js:babel-register --reporter dot ./test/",
     "start:dev": "NODE_ENV=development nodemon --watch server server/index.js --exec babel-node --preserve-lines",
-    "start": "NODE_ENV=production node compiled/index.js",
-    "coverage": "istanbul cover _mocha -- --recursive --compilers js:babel-register --reporter dot ./test/"
+    "start": "NODE_ENV=production node compiled/index.js"
   },
   "repository": {
     "type": "git",
@@ -103,7 +97,7 @@
     "lodash": "^4.11.2",
     "mocha": "*",
     "node-sass": "^3.7.0",
-    "npm": "^3.8.9",
+    "npm": "^3.9.1",
     "npm-watch": "*",
     "pg": "^4.5.5",
     "react": "^15.0.2",
