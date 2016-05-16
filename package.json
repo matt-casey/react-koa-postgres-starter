@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-sass-seed",
+  "name": "react-koa-psql-starter",
   "version": "1.0.0",
-  "description": "Starter project for React/Redux with custom SCSS",
+  "description": "Starter project for React Koa and PSQL",
   "main": "app/index.js",
   "scripts": {
     "copy-assets": "mkdir -p build && cp app/index.html build/index.html && cp -R app/favicon.ico build/favicon.ico && cp -R app/assets build/assets",
