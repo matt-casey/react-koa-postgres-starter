@@ -1,0 +1,18 @@
+@mixin load-font-families($font__families){
+    @each $font in $font__families{
+        $filename: #{map-get($font, filename)};
+        $src: null;
+        @each $format in map-get($font, extensions) {
+            @if $format{
+                $src: append($src, url(quote($font__file-path + $filename + '.' + $format)) format(quote($format)), comma);
+            }
+        }
+
+        @font-face {
+            src: $src;
+            font-family: '#{map-get($font, family)}';
+            font-weight: #{map-get($font, weight)};
+            font-style: #{map-get($font, style)};
+        }
+    }
+}

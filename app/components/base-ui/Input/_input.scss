@@ -1,0 +1,23 @@
+.input-container{
+  display: block;
+  text-align: left;
+  margin-bottom: 14px;
+}
+
+.input {
+  display: block;
+  width: 100%;
+}
+
+.input__label{
+  display: block;
+}
+
+.input__error{
+  display: block;
+  color: red;
+}
+
+.input:focus+.input__error{
+  visibility: hidden;
+}

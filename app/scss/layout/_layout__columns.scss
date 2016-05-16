@@ -1,0 +1,59 @@
+@include im-columns($column-sizes...); //generates classes for columns
+
+.col,
+[class^="col--"],
+[class*=" col--"]{
+  float: left;
+}
+
+.row{
+  @extend .u-clearfix;
+  width: 100%;
+  margin-bottom: $layout__large-spacing;
+}
+
+.row--accented{
+  background: $color__background-two;
+}
+
+.row--centered{
+  text-align: center;
+
+  >[class^="col--"],
+  >[class*=" col--"],
+  >.row{
+    display: inline-block;
+    vertical-align: top;
+    float: initial;
+    //HACK inline-block adds whitespace which negative margins removes
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+}
+
+.row--left-aligned{
+  text-align: left;
+
+  >[class^="col--"], >[class*=" col--"], >.row{
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    //HACK inline-block adds whitespace which negative margins removes
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+}
+
+.row--right-aligned{
+  text-align: right;
+
+  >[class^="col--"], >[class*=" col--"], >.row{
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+  }
+}
+
+.row--padded, .col--padded{
+  padding: $layout__standard-spacing;
+}

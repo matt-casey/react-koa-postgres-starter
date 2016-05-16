@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/jsx-no-bind": 0
+  }
+}

@@ -1,0 +1,104 @@
+/************************************************
+ * ANIMATION MIXINS
+ ************************************************/
+@mixin transition($type){
+  -webkit-transition: $type;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+     -moz-transition: $type;  /* some or another version of firefox  */
+          transition: $type;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
+@mixin multi-transition($type, $type2){
+  -webkit-transition: $type, $type2;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+     -moz-transition: $type, $type2;  /* some or another version of firefox  */
+          transition: $type, $type2;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
+@mixin translate($amount){
+  -webkit-transform: translate3d($amount,0,0);
+          transform: translate3d($amount,0,0);
+      -ms-transform: translate($amount,0); //IE9 hack
+}
+
+@mixin hardware-acceleration {
+  @include translate(0);
+}
+
+@mixin translate-y($amount){
+  -webkit-transform: translate3d(0,$amount,0);
+          transform: translate3d(0,$amount,0);
+      -ms-transform: translate(0,$amount); //IE9 hack
+}
+
+@mixin slide-off-left{
+  @include translate(-100%);
+}
+
+@mixin slide-off-right{
+  @include translate(100%);
+}
+
+@mixin animation-name($name) {
+  -webkit-animation-name: $name;
+     -moz-animation-name: $name;
+      -ms-animation-name: $name;
+       -o-animation-name: $name;
+          animation-name: $name;
+}
+@mixin animation-timing($timing) {
+  -webkit-animation-timing-function: $timing;
+     -moz-animation-timing-function: $timing;
+      -ms-animation-timing-function: $timing;
+       -o-animation-timing-function: $timing;
+          animation-timing-function: $timing;
+}
+@mixin animation-duration($duration) {
+  -webkit-animation-duration: $duration;
+     -moz-animation-duration: $duration;
+      -ms-animation-duration: $duration;
+       -o-animation-duration: $duration;
+          animation-duration: $duration;
+}
+@mixin animation-delay($delay) {
+  -webkit-animation-delay: $delay;
+     -moz-animation-delay: $delay;
+      -ms-animation-delay: $delay;
+       -o-animation-delay: $delay;
+          animation-delay: $delay;
+}
+
+/************************************************
+ * SITEWIDE ANIMATION CLASSES
+ ************************************************/
+$animation-very-fast: 0.14s;
+$animation-fast: 0.24s;
+$animation-simple: 0.32s;
+$animation-slow: 0.5s;
+
+.u-anim--hardware-accelerate{
+  @include hardware-acceleration;
+}
+
+.u-anim--very-fast {
+  @include hardware-acceleration;
+  @include transition(all $animation-very-fast ease-out);
+}
+
+.u-anim--fast {
+  @include hardware-acceleration;
+  @include transition(all $animation-fast ease-out);
+}
+
+.u-anim--simple {
+  @include hardware-acceleration;
+  @include transition(all $animation-simple ease-out);
+}
+
+.u-anim--slow {
+  @include hardware-acceleration;
+  @include transition(all $animation-slow ease-out);
+}
+
+// the transition css property breaks position fixed of children elements
+.u-anim--no-acceleration{
+  @include transition(all $animation-fast ease-out);
+}

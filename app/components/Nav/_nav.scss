@@ -1,0 +1,22 @@
+.nav{
+  background: black;
+  color: white;
+  height: 40px;
+}
+
+.nav__link{
+  margin: 0 20px;
+  line-height: 40px;
+  text-transform: capitalize;
+
+  &:hover {
+    cursor: pointer;
+    color: silver;
+  }
+  &:active {
+    color: gray;
+  }
+  &.nav__link--is-active {
+    text-decoration: underline;
+  }
+}

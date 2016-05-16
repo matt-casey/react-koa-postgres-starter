@@ -1,0 +1,36 @@
+$font__color: $gray--darkest;
+$font__color--accent: $gray;
+$font__color--light: $gray--lightest;
+
+$font__base-size: 14px;
+$font__base-line-height: $font__base-size * 1.5; /* 21px */
+// $font__base-family: Proxima, sans-serif;
+$font__base-family: Verdana,"Trebuchet MS",Geneva,sans-serif;
+$font__header-family: Charter, serif;
+
+$font__sizes: (
+  ( name: 'giga',    size: 4,     weight: 400, line-height: 1.125, other-selectors: '' ,     font-family: $font__header-family ),
+  ( name: 'mega',    size: 3,     weight: 400, line-height: 1.333, other-selectors: '' ,     font-family: $font__header-family ),
+  ( name: 'kilo',    size: 2.5,   weight: 300, line-height: 1.2,   other-selectors: '' ,     font-family: $font__header-family ),
+  ( name: 'alpha',   size: 2,     weight: 300, line-height: 1.5,   other-selectors: 'h1',    font-family: $font__header-family ),
+  ( name: 'beta',    size: 1.5,   weight: 300, line-height: 1.666, other-selectors: 'h2',    font-family: $font__header-family ),
+  ( name: 'gamma',   size: 1.25,  weight: 700, line-height: 1.2,   other-selectors: 'h3',    font-family: $font__base-family ),
+  ( name: 'delta',   size: 1.125, weight: 400, line-height: 1.333, other-selectors: 'h4',    font-family: $font__base-family ),
+  ( name: 'epsilon', size: 1.075, weight: 400, line-height: 2,     other-selectors: 'h5',    font-family: $font__base-family ),
+  ( name: 'zeta',    size: 1,     weight: 400, line-height: 1.5,   other-selectors: 'h6',    font-family: $font__base-family ),
+  ( name: 'body',    size: 1,     weight: 400, line-height: 1.5,   other-selectors: 'p',     font-family: $font__base-family ),
+  ( name: 'milli',   size: 0.9,   weight: 400, line-height: 1.111, other-selectors: 'small', font-family: $font__base-family ),
+  ( name: 'micro',   size: 0.75,  weight: 400, line-height: 1.333, other-selectors: '' ,     font-family: $font__base-family )
+);
+
+$font__file-path: '/assets/fonts/';
+$font__families: (
+  ( family: 'Charter', weight: 400, style: 'normal',          filename: 'Charter-Roman',               extensions: ('ttf')),
+  ( family: 'Charter', weight: 400, style: 'italic, oblique', filename: 'Charter-Italic',              extensions: ('ttf')),
+  ( family: 'Charter', weight: 500, style: 'normal',          filename: 'Charter-Bold',                extensions: ('ttf')),
+  ( family: 'Charter', weight: 500, style: 'italic, oblique', filename: 'Charter-BoldItalic',          extensions: ('ttf')),
+  ( family: 'Charter', weight: 700, style: 'normal',          filename: 'Charter-Black',               extensions: ('ttf')),
+  ( family: 'Proxima', weight: 300, style: 'normal',          filename: 'proximanova-light-webfont',   extensions: ('eot', 'woff2', 'woff', 'ttf')),
+  ( family: 'Proxima', weight: 400, style: 'normal',          filename: 'proximanova-regular-webfont', extensions: ('eot', 'woff2', 'woff', 'ttf')),
+  ( family: 'Proxima', weight: 700, style: 'normal',          filename: 'proximanova-bold-webfont',    extensions: ('eot', 'woff2', 'woff', 'ttf'))
+);

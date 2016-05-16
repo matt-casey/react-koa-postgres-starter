@@ -1,0 +1,29 @@
+export const SET_AUTH = 'SET_AUTH';
+export const CLEAR_AUTH = 'CLEAR_AUTH';
+
+export const LOG_OUT = 'LOG_OUT';
+export const REFRESH_DATA = 'REFRESH_DATA';
+export const REFRESH_USER = 'REFRESH_USER';
+
+// REST ACTIONS
+export const API_CALL = 'API_CALL';
+
+export const LOGIN = 'LOGIN';
+export const LOGIN_REQUEST = 'LOGIN_REQUEST';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAILURE = 'LOGIN_FAILURE';
+
+export const SIGNUP = 'SIGNUP';
+export const SIGNUP_REQUEST = 'SIGNUP_REQUEST';
+export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
+export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
+
+export const REFRESH_TOKEN = 'REFRESH_TOKEN';
+export const REFRESH_TOKEN_REQUEST = 'REFRESH_TOKEN_REQUEST';
+export const REFRESH_TOKEN_SUCCESS = 'REFRESH_TOKEN_SUCCESS';
+export const REFRESH_TOKEN_FAILURE = 'REFRESH_TOKEN_FAILURE';
+
+export const GET_USER = 'GET_USER';
+export const GET_USER_REQUEST = 'GET_USER_REQUEST';
+export const GET_USER_SUCCESS = 'GET_USER_SUCCESS';
+export const GET_USER_FAILURE = 'GET_USER_FAILURE';

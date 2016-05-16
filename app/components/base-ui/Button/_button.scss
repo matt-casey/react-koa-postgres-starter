@@ -1,0 +1,31 @@
+@import '../../../scss/utils/variables';
+@import '../../../scss/base/reset';
+@import '../../../scss/vendor/include-media';
+
+button:focus {
+  outline: 0;
+}
+
+.button{
+  @include form-reset-button;
+  display: inline-block;
+  width: 240px;
+  padding: 10px;
+  white-space: nowrap;
+  margin-bottom: 14px;
+}
+
+.button:hover{
+  cursor: pointer;
+}
+
+.button--is-loading{}
+
+.button--primary{
+  background: gray;
+  color: white;
+}
+.button--secondary{}
+
+.button--small{}
+.button--large{}

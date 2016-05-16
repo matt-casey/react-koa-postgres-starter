@@ -1,0 +1,46 @@
+@mixin get-font-styles($font) {
+  font-weight: map-get($font, weight);
+  font-size:   map-get($font, size) * $font__base-size;
+  font-size:   map-get($font, size) * 1rem;
+  line-height: map-get($font, line-height);
+  font-family: map-get($font, font-family);
+}
+
+@mixin create-classes-for-size($fonts, $class-suffix:false) {
+  @each $font in $fonts{
+    @if $class-suffix {
+      .#{map-get($font, name)}\@#{$class-suffix}{
+        @include get-font-styles($font);
+      }
+    }
+    @else {
+      .#{map-get($font, name)}, #{map-get($font, other-selectors)}{
+        @include get-font-styles($font);
+      }
+    }
+  }
+}
+
+@mixin generate-font-classes($font__sizes){
+  @include create-classes-for-size($font__sizes);
+
+  $i: 0; //index to track through loop
+
+  @each $breakpointName, $breakpointUnit in $breakpoints{
+    @if $i > 0{
+      $previous: nth($breakpoints, $i); //returns a list, e.g. (small 500px)
+      $lowerLimit: '>' + nth($previous, 1);
+
+      @include media($lowerLimit){
+        @include create-classes-for-size($font__sizes, $breakpointName);
+      }
+    }
+    @else{
+      @include media('<=' + $breakpointName){
+        @include create-classes-for-size($font__sizes, $breakpointName);
+      }
+    }
+
+    $i: $i + 1; // increment index
+  }
+}

@@ -1,0 +1,39 @@
+@mixin square($n, $i) {
+  position: relative;
+  float:left;
+  width: ($n / $i) * 100%;
+  padding-bottom : ($n / $i) * 100%;
+  &.square--padded{
+    border-left: solid $layout__standard-spacing/2 transparent;
+  }
+  &.square--padded:first-of-type{
+    border-left: none;
+    border-right: solid $layout__standard-spacing/2 transparent;
+  }
+}
+
+@mixin im-squares($columns...) {
+  @each $i in $columns {
+    @for $n from 1 through $i {
+      .square--#{$n}-#{$i} {
+        @include square($n, $i);
+      }
+    }
+  }
+
+  @each $breakpoint in $breakpoints {
+    $breakpoint-name: nth($breakpoint, 1);
+
+    @include media(#{'>=' + $breakpoint-name}) {
+      @each $i in $columns {
+        @for $n from 1 through $i {
+          .square--#{$n}-#{$i}\@#{$breakpoint-name} {
+            @include square($n, $i);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include im-squares($column-sizes...);

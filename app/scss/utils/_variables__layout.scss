@@ -1,0 +1,12 @@
+$breakpoints: (
+  small: 500px,
+  medium: 800px,
+  large: 1024px,
+  extra-large: 1300px
+);
+
+$column-sizes: (1, 2, 3, 4, 5, 12);
+
+$layout__standard-spacing: 28px;
+$layout__large-spacing: 66px;
+$layout__max-width: 950px;

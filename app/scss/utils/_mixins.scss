@@ -1,0 +1,36 @@
+@mixin webkit-scrolling{
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+@mixin rotate($deg) {
+  -webkit-transform: rotate($deg);
+      -ms-transform: rotate($deg);
+          transform: rotate($deg);
+}
+
+@mixin rotate-45-deg {
+  @include rotate(45deg);
+}
+
+@mixin x-button {
+  @include rotate-45-deg;
+  content: "+";
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  font-size: 50px;
+  text-align: center;
+  line-height: 30px;
+}
+
+// will make the mask-color in an image match the parent div color (i.e. remove white background)
+@mixin remove-image-background($mask-color){
+  background-color: $mask-color;
+  background-blend-mode: multiply;
+}

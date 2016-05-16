@@ -1,0 +1,79 @@
+@import 'fonts__loader';
+@import 'fonts__generator';
+
+/* Define your base font-size here; most elements will inherit this. */
+html, body{
+    font-size: $font__base-size;
+    line-height: $font__base-line-height;
+    color: $font__color;
+    font-family: $font__base-family;
+}
+
+/* Common margin-bottom for vertical rhythm. */
+h1,h2,h3,h4,h5,h6,
+ul,ol,dl,
+fieldset,
+p,
+table,
+pre,
+hr,
+small{
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 1.5 * $font__base-size; /* 21px */
+    margin-bottom: 1.5rem;
+}
+
+@include load-font-families($font__families);
+@include generate-font-classes($font__sizes);
+
+/* font util classes. */
+.u-initalcase{
+  text-transform: none;
+}
+
+.u-uppercase{
+  text-transform: uppercase;
+}
+
+.u-titlecase{
+  text-transform: capitalize;
+}
+
+.u-sentencecase::first-letter {
+  text-transform: capitalize;
+}
+
+
+
+.u-strong{
+  font-weight: bold;
+}
+
+.u-em{
+  font-style: italic;
+}
+
+
+
+.u-accent-text{
+  color: $font__color--accent;
+}
+
+.u-light-text{
+  color: $font__color--light;
+}
+
+
+
+.u-align-center{
+  text-align: center;
+}
+
+.u-align-left{
+  text-align: left;
+}
+
+.u-align-right{
+  text-align: right;
+}
