@@ -2,22 +2,9 @@
 
 A production-ready starter repo using an ES6 stack.
 
-Front-end
-- React
-- Redux
-- Redux-saga
-- SCSS/SASS
-
-Server
-- Node
-- Koa 2.0
-- BookshelfJS
-
-Tests
-- Mocha
-- Chai
-- Istanbul
-
-Build
-- Webpack (client)
-- Babel (server)
+| Client      | Server      | Database   | Build            | Tests    |
+|-------------|-------------|------------|------------------|----------|
+| React       | Node        | PostgreSQL | Webpack (client) | Mocha    |
+| Redux       | Koa 2       | KnexJS     | Babel (server)   | Chai     |
+| Redux-sagas | BookshelfJS |            |                  | Istanbul |
+| SCSS / Sass |             |            |                  |          |
